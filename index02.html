@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela dos Produtos</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+</head>
+<body>
+    <div class="divConteiner">
+
+        <div class="divTable">
+            <table>
+                <thead>
+                    <h2>Tabela dos produtos</h2>
+                    <tr>
+                        <th>ID</th>
+                        <th>Produto</th>
+                        <th>Quantidade por uni.</th>
+                        <th>Valor da uni.</th>
+                        <th>Valor total</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr"></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script>
+
+        function loadData() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("tr").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "script.js", true);
+            xhttp.send();
+        }
+
+        loadData()
+
+    </script>
+</body>
+</html>
